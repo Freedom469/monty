@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 /**
  * main - entry point to the programme
  * @argc: number of arguments
