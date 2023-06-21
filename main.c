@@ -1,5 +1,11 @@
 #include "monty.h"
 
+void nop(stack_t **stack)
+{
+	(void)stack;
+	/* Do nothing */
+}
+
 /**
  * main - entry point to the program
  * @argc: number of arguments
@@ -56,6 +62,10 @@ int main(int argc, char *argv[])
 		else if (strcmp(opcode, "pint") == 0)
 		{
 			pint(&stack);
+		}
+		else if(strcmp(opcode, "nop") == 0)
+		{
+			nop(&stack);
 		}
 		else
 		{
