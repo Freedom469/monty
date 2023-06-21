@@ -37,6 +37,10 @@ int main(int argc, char *argv[])
 				else if (strcmp(command, "pall") == 0)
 				{	pall(&stack);
 				}
+				else if (strcmp(command, "pint") == 0)
+				{
+					pint(&stack);
+				}
 				else
 				{	fprintf(stderr, "Error: L%u: unknown instruction %s\n",
 						line_number, command);
