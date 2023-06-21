@@ -1,6 +1,26 @@
 #include "monty.h"
 
 /**
+ * check_for_digit - checks that a string only contains digits
+ * @arg: string to check
+ *
+ * Return: 0 if only digits, else 1
+ */
+static int check_for_digit(char *arg)
+{
+	int i;
+
+	for (i = 0; arg[i]; i++)
+	{
+		if (arg[i] == '-' && i == 0)
+			continue;
+		if (isdigit(arg[i]) == 0)
+			return (1);
+	}
+	return (0);
+}
+
+/**
  * push - pushes a node struct to the stack
  * @stack: storage where the node will be pushed
  * @line_number: number of opcode in a monty file
@@ -13,7 +33,7 @@ void push(stack_t **stack, unsigned int line_number, char *arg)
 	stack_t *new_node;
 	int value = 0;
 
-	if (arg == NULL || strlen(arg) == 0)
+	if (arg == NULL || check_for_digit(arg))
 	{
 		fprintf(stderr, "Error: L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);

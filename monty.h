@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <string.h>
 #define STDOUT_FILENO 1
+#include <ctype.h>
 
 extern char *file;
 
