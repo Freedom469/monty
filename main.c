@@ -25,6 +25,7 @@ int main(int argc, char *argv[])
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
+		fflush(stderr);
 		exit(EXIT_FAILURE);
 	}
 
@@ -33,6 +34,7 @@ int main(int argc, char *argv[])
 	if (file == NULL)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", file_name);
+		fflush(stderr);
 		exit(EXIT_FAILURE);
 	}
 
@@ -51,6 +53,7 @@ int main(int argc, char *argv[])
 			if (argument == NULL)
 			{
 				fprintf(stderr, "L%u: usage: push integer\n", line_number);
+				fflush(stderr);
 				exit(EXIT_FAILURE);
 			}
 			push(&stack, line_number, argument);
@@ -69,7 +72,7 @@ int main(int argc, char *argv[])
 		}
 		else
 		{
-			fprintf(stderr, "Error: L%u: unknown instruction %s\n", line_number, opcode);
+			fprintf(stderr, "L%u: unknown instruction %s\n", line_number, opcode);
 			exit(EXIT_FAILURE);
 		}
 	}
