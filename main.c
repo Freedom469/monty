@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
 		{
 			if (argument == NULL)
 			{
-				fprintf(stderr, "Error: L%u: usage: push integer\n", line_number);
+				fprintf(stderr, "L%u: usage: push integer\n", line_number);
 				exit(EXIT_FAILURE);
 			}
 			push(&stack, line_number, argument);
