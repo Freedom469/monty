@@ -5,6 +5,7 @@
  * @argv: argmunents passed to the programme
  * Return: zero on success
  */
+#define STDOUT_FILENO 1
 int main(int argc, char *argv[])
 {	char *file_name;
 	FILE *file;
