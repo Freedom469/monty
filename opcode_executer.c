@@ -57,6 +57,10 @@ void execute(char *instruction, unsigned int line_number, stack_t **stack)
 	{
 		mul(stack, line_number);
 	}
+	else if (strcmp(opcode, "mod") == 0)
+	{
+		mod(stack, line_number);
+	}
 	else
 	{
 		fprintf(stderr, "L%u: unknown instruction %s\n", line_number, opcode);
