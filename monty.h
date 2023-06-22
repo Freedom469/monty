@@ -49,6 +49,7 @@ void nop(stack_t **stack);
 void run_monty_file(char *file_name);
 void execute(char *instruction, unsigned int line_number, stack_t **stack);
 int is_valid_integer(char *str);
+void pop(stack_t **stack, unsigned int line_number);
 
 
 #endif
