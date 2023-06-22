@@ -53,6 +53,10 @@ void execute(char *instruction, unsigned int line_number, stack_t **stack)
 	{
 		monty_div(stack, line_number);
 	}
+	else if (strcmp(opcode, "mul") == 0)
+	{
+		mul(stack, line_number);
+	}
 	else
 	{
 		fprintf(stderr, "L%u: unknown instruction %s\n", line_number, opcode);
