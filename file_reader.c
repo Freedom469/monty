@@ -6,6 +6,7 @@
  */
 void run_monty_file(char *file_name)
 {
+	char *trimmed_line;
 	unsigned int line_number = 0;
 	char line[256];
 	stack_t *stack = NULL;
@@ -21,7 +22,10 @@ void run_monty_file(char *file_name)
 	while (fgets(line, sizeof(line), file) != NULL)
 	{
 		line_number++;
-		execute(line, line_number, &stack);
+		trimmed_line = trim_whitespace(line);
+		if (trimmed_line[0] == '\0' || trimmed_line[0] == '#')
+			continue;
+		execute(trimmed_line, line_number, &stack);
 	}
 
 	fclose(file);
