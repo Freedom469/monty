@@ -16,6 +16,7 @@ void push(stack_t **stack, unsigned int line_number, char *arg)
 		fflush(stderr);
 		exit(EXIT_FAILURE);
 	}
+
 	if (arg[0] == '-' && arg[1] != '\0')
 	{
 		value = atoi(arg + 1) * -1;
@@ -24,12 +25,7 @@ void push(stack_t **stack, unsigned int line_number, char *arg)
 	{
 		value = atoi(arg);
 	}
-	if (value == 0 && strcmp(arg, "0") != 0)
-	{
-		fprintf(stderr, "L%u: usage: push integer\n", line_number);
-		fflush(stderr);
-		exit(EXIT_FAILURE);
-	}
+
 	/* Create a new node and add it to the top of the stack */
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
