@@ -18,7 +18,7 @@ void push(stack_t **stack, unsigned int line_number, char *arg)
 	}
 	if (arg[0] == '-' && arg[1] != '\0')
 	{
-		value = atoi(arg + 1) * -1;  /* Convert the substring after '-' to an integer and negate it */
+		value = atoi(arg + 1) * -1;
 	}
 	else
 	{
@@ -30,7 +30,6 @@ void push(stack_t **stack, unsigned int line_number, char *arg)
 		fflush(stderr);
 		exit(EXIT_FAILURE);
 	}
-
 	/* Create a new node and add it to the top of the stack */
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
@@ -39,7 +38,6 @@ void push(stack_t **stack, unsigned int line_number, char *arg)
 		fflush(stderr);
 		exit(EXIT_FAILURE);
 	}
-
 	new_node->n = value;
 	new_node->prev = NULL;
 	new_node->next = *stack;
