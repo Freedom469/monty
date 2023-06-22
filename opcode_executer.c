@@ -43,7 +43,11 @@ void execute(char *instruction, unsigned int line_number, stack_t **stack)
 	}
 	else if (strcmp(opcode, "add") == 0)
 	{
-		add(stack,line_number);
+		add(stack, line_number);
+	}
+	else if (strcmp(opcode, "sub") == 0)
+	{
+		sub(stack, line_number);
 	}
 	else
 	{
