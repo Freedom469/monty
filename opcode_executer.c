@@ -41,6 +41,10 @@ void execute(char *instruction, unsigned int line_number, stack_t **stack)
 	{
 		swap(stack, line_number);
 	}
+	else if (strcmp(opcode, "add") == 0)
+	{
+		add(stack,line_number);
+	}
 	else
 	{
 		fprintf(stderr, "L%u: unknown instruction %s\n", line_number, opcode);
