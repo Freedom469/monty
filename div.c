@@ -21,7 +21,7 @@ void monty_div(stack_t **stack, unsigned int line_number)
 
 	if (temp->n == 0)
 	{
-		fprintf(stderr, "L%u: division by zero", line_number);
+		fprintf(stderr, "L%u: division by zero\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
