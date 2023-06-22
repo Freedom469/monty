@@ -15,7 +15,7 @@ void monty_div(stack_t **stack, unsigned int line_number)
 
 	if (temp == NULL || temp->next == NULL)
 	{
-		fprintf(stderr, "L%u: can't sub, stack too short\n", line_number);
+		fprintf(stderr, "L%u: can't div, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
