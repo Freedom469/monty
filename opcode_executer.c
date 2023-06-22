@@ -49,6 +49,10 @@ void execute(char *instruction, unsigned int line_number, stack_t **stack)
 	{
 		sub(stack, line_number);
 	}
+	else if (strcmp(opcode, "div") == 0)
+	{
+		monty_div(stack, line_number);
+	}
 	else
 	{
 		fprintf(stderr, "L%u: unknown instruction %s\n", line_number, opcode);
